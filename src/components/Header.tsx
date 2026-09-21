@@ -36,10 +36,10 @@ export const Header: React.FC<HeaderProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <h1 className="font-serif font-bold text-lg sm:text-xl tracking-wider text-stone-900 leading-none">
-                FIAT
+                PROVIDENCE
               </h1>
               <span className="hidden md:inline-block px-2 py-0.5 rounded-full bg-sacred-100 text-sacred-800 text-[10px] font-semibold tracking-wide uppercase">
-                Divine Providence
+                Divine Will
               </span>
             </div>
             <p className="text-[11px] text-stone-500 font-serif italic hidden sm:block">

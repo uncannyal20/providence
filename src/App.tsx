@@ -215,7 +215,7 @@ export function App() {
             "The present moment is ever full of infinite treasures; it contains greater riches than you could possibly grasp."
           </p>
           <p className="text-[11px] text-stone-400 font-sans tracking-wide">
-            FIAT • Contemplative 30-Day Journal based on Jean-Pierre de Caussade • 100% Client-Side Privacy
+            PROVIDENCE • Contemplative 30-Day Journal based on Jean-Pierre de Caussade • 100% Client-Side Privacy
           </p>
         </div>
       </footer>
