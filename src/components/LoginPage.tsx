@@ -76,12 +76,17 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
           {/* Login Form */}
           <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
             <div className="space-y-1.5">
-              <label 
-                htmlFor="journal-password" 
-                className="block text-xs font-semibold text-stone-700 tracking-wide uppercase"
-              >
-                Enter Password
-              </label>
+              <div className="flex items-center justify-between">
+                <label 
+                  htmlFor="journal-password" 
+                  className="block text-xs font-semibold text-stone-700 tracking-wide uppercase"
+                >
+                  Enter Password
+                </label>
+                <span className="text-[11px] text-stone-400 font-medium">
+                  Hint: <strong className="text-sacred-700 font-semibold">SFX GYM</strong>
+                </span>
+              </div>
 
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
