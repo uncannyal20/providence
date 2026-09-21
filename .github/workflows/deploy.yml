@@ -1,4 +1,4 @@
-name: Deploy Fiat Journal to GitHub Pages
+name: Deploy Providence to GitHub Pages
 
 on:
   push:
