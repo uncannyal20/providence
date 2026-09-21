@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+  
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom subtle scrollbar for parchment theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F3EB;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBBBA0;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #AF9D7D;
+  }
+}
+
+/* Contemplative reading styling */
+.serif-dropcap::first-letter {
+  font-family: 'Newsreader', Georgia, serif;
+  float: left;
+  font-size: 3.8rem;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  color: #876326;
+  font-weight: 600;
+}
+
+.parchment-texture {
+  background-color: #FAF6EE;
+  background-image: radial-gradient(#E2D6C0 0.75px, transparent 0.75px), radial-gradient(#E2D6C0 0.75px, #FAF6EE 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Subtle glow for highlighted text in full chapter reader */
+.reading-highlight {
+  background-color: #FEF3C7;
+  border-left: 3px solid #D97706;
+  padding-left: 0.75rem;
+  transition: all 0.5s ease;
+  border-radius: 0.125rem;
+}
