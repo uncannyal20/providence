@@ -10,6 +10,7 @@ import { SurrenderBox } from './components/SurrenderBox';
 import { ChapterReaderDrawer } from './components/ChapterReaderDrawer';
 import { DataManagementModal } from './components/DataManagementModal';
 import { AboutModal } from './components/AboutModal';
+import { LoginPage } from './components/LoginPage';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function App() {
@@ -25,6 +26,22 @@ export function App() {
     } catch {}
     return 1;
   });
+
+  // Password authentication state (persisted in localStorage)
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('providence_auth') === 'true';
+    } catch {
+      return false;
+    }
+  });
+
+  const handleLogout = useCallback(() => {
+    try {
+      localStorage.removeItem('providence_auth');
+    } catch {}
+    setIsAuthenticated(false);
+  }, []);
 
   // Master persistence hook
   const {
@@ -111,6 +128,10 @@ export function App() {
     dark: 'theme-dark',
   }[themeMode];
 
+  if (!isAuthenticated) {
+    return <LoginPage onLogin={() => setIsAuthenticated(true)} />;
+  }
+
   return (
     <div className={`min-h-screen flex flex-col font-sans transition-colors duration-200 ${themeClass}`}>
       
@@ -123,6 +144,7 @@ export function App() {
         onThemeChange={setThemeMode}
         onOpenBackup={() => setIsBackupModalOpen(true)}
         onOpenAbout={() => setIsAboutModalOpen(true)}
+        onLogout={handleLogout}
       />
 
       {/* Main App Container */}

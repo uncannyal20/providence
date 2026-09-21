@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, HelpCircle, Sun, Moon, Coffee, HeartHandshake } from 'lucide-react';
+import { Database, HelpCircle, Sun, Moon, Coffee, HeartHandshake, Lock } from 'lucide-react';
 
 interface HeaderProps {
   currentDay: number;
@@ -9,6 +9,7 @@ interface HeaderProps {
   onThemeChange: (mode: 'light' | 'sepia' | 'dark') => void;
   onOpenBackup: () => void;
   onOpenAbout: () => void;
+  onLogout?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -19,6 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
   onThemeChange,
   onOpenBackup,
   onOpenAbout,
+  onLogout,
 }) => {
   return (
     <header className="border-b border-parchment-200/80 bg-parchment-50/90 backdrop-blur-md sticky top-0 z-30 transition-colors">
@@ -126,6 +128,18 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Database className="w-4 h-4" />
           </button>
+
+          {/* Lock / Sign Out */}
+          {onLogout && (
+            <button
+              type="button"
+              onClick={onLogout}
+              title="Lock Journal"
+              className="p-2 rounded-xl text-stone-600 hover:text-stone-900 hover:bg-parchment-200/80 transition-colors cursor-pointer"
+            >
+              <Lock className="w-4 h-4" />
+            </button>
+          )}
 
         </div>
 
